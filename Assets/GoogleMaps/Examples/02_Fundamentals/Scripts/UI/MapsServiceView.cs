@@ -241,7 +241,7 @@ namespace Google.Maps.Examples {
             // If the camera controller is set, update azimuth and inclination to have a smooth
             // transition when retaking control of the camera with the keyboard.
             if (CameraController != null) {
-              CameraController.InitializeAzimuthAndInclination();
+              CameraController.InitializeAzimuth();
             }
           }
         }
