@@ -53,7 +53,7 @@ namespace Vdp
             return "Basic " + authHeaderString;
         }
 
-        public string DoMutualAuthCall(string path, string method, string testInfo, string requestBodyString, Dictionary<string, string> headers = null)
+        public Tuple<string, string> DoMutualAuthCall(string path, string method, string testInfo, string requestBodyString, Dictionary<string, string> headers = null)
         {
             string requestURL = "https://sandbox.api.visa.com/" + path;
             string userId = "1QF5U0CK7H8PAIZRTOS721MIJS6xUplNOqh0IOrw8mZ-ZCDMg";
@@ -62,7 +62,8 @@ namespace Vdp
             string certificatePassword = "abc";
             string statusCode = "";
             LogRequest(requestURL, requestBodyString);
-            // Create the POST request object 
+
+            // Create the request object 
             HttpWebRequest request = WebRequest.Create(requestURL) as HttpWebRequest;
             request.Method = method;
             if (method.Equals("POST") || method.Equals("PUT"))
@@ -94,8 +95,12 @@ namespace Vdp
                 // Make the call
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-                    LogResponse(testInfo, response);
                     statusCode = response.StatusCode.ToString();
+                    using (var sr = new StreamReader(response.GetResponseStream(), ASCIIEncoding.ASCII)) {
+                        string responseBody = sr.ReadToEnd();
+                        UnityEngine.Debug.Log("Response body: " + responseBody);
+                        return new Tuple<string, string>(statusCode, responseBody);
+                    }
                 }
             }
             catch (WebException e)
@@ -103,84 +108,13 @@ namespace Vdp
                 if (e.Response is HttpWebResponse)
                 {
                     HttpWebResponse response = (HttpWebResponse)e.Response;
-                    LogResponse(testInfo, response);
                     statusCode = response.StatusCode.ToString();
+
+                    return new Tuple<string, string>(statusCode, null);
                 }
             }
-            return statusCode;
+
+            return null;
         }
-
-        // public string DoXPayTokenCall(string baseUri, string resourcePath, string queryString, string method, string testInfo, string requestBodyString)
-        // {
-        //     string requestURL = "https://sandbox.api.visa.com/" + baseUri + resourcePath + "?" + queryString;
-        //     string apikey = ConfigurationManager.AppSettings["apiKey"];
-        //     LogRequest(requestURL, requestBodyString);
-        //     // Create the POST request object 
-        //     string statusCode = "";
-        //     HttpWebRequest request = WebRequest.Create(requestURL) as HttpWebRequest;
-        //     request.Method = method;
-        //     if (method.Equals("POST") || method.Equals("PUT"))
-        //     {
-        //         request.ContentType = "application/json";
-        //         request.Accept = "application/json";
-        //         // Load the body for the post request
-        //         var requestStringBytes = Encoding.UTF8.GetBytes(requestBodyString);
-        //         request.GetRequestStream().Write(requestStringBytes, 0, requestStringBytes.Length);
-        //     }
-
-        //     string xPayToken = GetXPayToken(resourcePath, "apikey=" + apikey, requestBodyString);
-        //     request.Headers["x-pay-token"] = xPayToken;
-        //     request.Headers["ex-correlation-id"] = GetCorrelationId();
-
-        //     try
-        //     {
-        //         // Make the call
-        //         using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-        //         {
-        //             LogResponse(testInfo, response);
-        //             statusCode = response.StatusCode.ToString();
-        //         }
-        //     }
-        //     catch (WebException e)
-        //     {
-        //         if (e.Response is HttpWebResponse)
-        //         {
-        //             HttpWebResponse response = (HttpWebResponse)e.Response;
-        //             LogResponse(testInfo, response);
-        //             statusCode = response.StatusCode.ToString();
-        //         }
-        //     }
-        //     return statusCode;
-        // }
-
-        // private static string GetXPayToken(string apiNameURI, string queryString, string requestBody)
-        // {
-        //     string timestamp = GetTimestamp();
-        //     string sourceString = timestamp + apiNameURI + queryString + requestBody;
-        //     string hash = GetHash(sourceString);
-        //     string token = "xv2:" + timestamp + ":" + hash;
-        //     return token;
-        // }
-
-        private static string GetTimestamp()
-        {
-            long timeStamp = ((long)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds) / 1000;
-            return timeStamp.ToString();
-        }
-
-        // private static string GetHash(string data)
-        // {
-        //     string sharedSecret = ConfigurationManager.AppSettings["sharedSecret"];
-        //     var hashString = new HMACSHA256(Encoding.ASCII.GetBytes(sharedSecret));
-        //     var hashbytes = hashString.ComputeHash(Encoding.ASCII.GetBytes(data));
-        //     string digest = String.Empty;
-
-        //     foreach (byte b in hashbytes)
-        //     {
-        //         digest += b.ToString("x2");
-        //     }
-
-        //     return digest;
-        // }
     }
 }
