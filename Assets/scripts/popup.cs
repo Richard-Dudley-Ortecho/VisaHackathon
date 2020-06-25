@@ -40,6 +40,11 @@ public class popup : MonoBehaviour
         UpdateText(offerStartIndex);
     }
 
+    // Hide gameobject
+    public void Hide() {
+        gameObject.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
