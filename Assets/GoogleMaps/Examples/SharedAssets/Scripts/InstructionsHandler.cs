@@ -45,7 +45,7 @@ namespace Google.Maps.Examples.Shared {
       Assert.IsNotNull(GlassPanel, "GlassPanel is not set!");
 
       InstructionsText.text =
-        "Arrow keys for pitch and yaw.\nWSAD to move.\nQE for height." +
+        "WSAD to move.\nQE to rotate." +
         "\n\nClick anywhere to close.";
 
       #if (UNITY_IOS || UNITY_ANDROID) && !UNITY_EDITOR
