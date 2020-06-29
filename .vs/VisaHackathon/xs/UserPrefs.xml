@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{DD7A9FB6-BA72-2582-49E3-F0E2DCEEDF11}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/popup.cs">
+    <Files>
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Merchant/MerchantIndentifier.cs" Line="76" Column="7" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Player/Player.cs" Line="15" Column="39" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/popup.cs" Line="33" Column="6" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/samplecode-CS-f3e8d0/vdp-c-sharp/vdp-c-sharp/VDPApiTest/helpers/VisaAPIClient.cs" Line="63" Column="36" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/offer_text.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="VisaHackathon" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="GoogleMaps" expanded="True">
+                <Node name="Examples" expanded="True">
+                  <Node name="02_Fundamentals" expanded="True">
+                    <Node name="Scripts" expanded="True">
+                      <Node name="Merchant" expanded="True" />
+                      <Node name="Player" expanded="True" />
+                      <Node name="samplecode-CS-f3e8d0" expanded="True">
+                        <Node name="vdp-c-sharp" expanded="True">
+                          <Node name="vdp-c-sharp" expanded="True">
+                            <Node name="Properties" expanded="True" />
+                            <Node name="VDPApiTest" expanded="True">
+                              <Node name="helpers" expanded="True" />
+                            </Node>
+                          </Node>
+                        </Node>
+                      </Node>
+                      <Node name="UI" expanded="True">
+                        <Node name="popup.cs" selected="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="efd0b964-b35d-46a2-96c5-44ec9e63c402" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
