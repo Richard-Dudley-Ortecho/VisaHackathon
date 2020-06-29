@@ -36,10 +36,8 @@ namespace GP
             UnityEngine.Debug.Log("Response Body: \n" + responseBody);
         }
 
-        public Tuple<string, string> DoMutualAuthCall(string path, string method, string testInfo, string requestBodyString, Dictionary<string, string> headers = null)
+        public Tuple<string, string> DoMutualAuthCall(string requestURL, string method, string testInfo, string requestBodyString, Dictionary<string, string> headers = null)
         {
-            string requestURL = "https://maps.googleapis.com" + path;
-            string APIkey = "Place API Key Here";
             string statusCode = "";
             LogRequest(requestURL, requestBodyString);
 
