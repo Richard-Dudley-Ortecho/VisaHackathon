@@ -66,15 +66,14 @@ public class MerchantIndentifier : MonoBehaviour
         //Now we set all the buildings to be marked accordingly
         for (int i = 0; i < businessesToLoad.Count; i++) {
           MarkStructures(i);
-      }
-
-
+        }
     }
 
     private void SetMercMarker(GameObject gameObject) {
       //Change the game object so that it is now marked, in this case it will be ?blinking? blue
       Renderer renderer = gameObject.GetComponent<Renderer>();
       renderer.material.color = Color.blue;
+      gameObject.tag = "marked merchant";
     }
 
     private bool IsStructure(GameObject gameObject) {
@@ -90,33 +89,32 @@ public class MerchantIndentifier : MonoBehaviour
     private void HandleStructureSpawn(GameObject gameObject) {
       //Make sure each building has a collider to "Find" the building
       gameObject.AddComponent<BoxCollider>();
+      gameObject.tag = "structure";
     }
 
-    void Start() {
+    void Start()
+    {
 
-      //Find the visa canvas where the button exists
-      GameObject visaButton =  GameObject.Find("VisaButton");
+        //Find the visa canvas where the button exists
+        GameObject visaButton = GameObject.Find("VisaButton");
 
-      Button mercLocatorButton = visaButton.GetComponentInChildren<Button>();
+        Button mercLocatorButton = visaButton.GetComponentInChildren<Button>();
 
-      //mercLocatorButton.onClick.AddListener(() => onClickFunction());
+        //mercLocatorButton.onClick.AddListener(() => onClickFunction());
 
-      mercLocatorButton.onClick.AddListener(() => OnClickFunction());
+        mercLocatorButton.onClick.AddListener(() => OnClickFunction());
 
-      mercLocatorButton.GetComponentInChildren<Text>().text = "Merc Locator";
+        mercLocatorButton.GetComponentInChildren<Text>().text = "Merc Locator";
 
-      //Make sure the created buildings have colliders
-      MapsService.Events.ExtrudedStructureEvents.DidCreate.AddListener(
-          args => { HandleStructureSpawn(args.GameObject); });
+        //Make sure the created buildings have colliders
+        MapsService.Events.ExtrudedStructureEvents.DidCreate.AddListener(
+            args => { HandleStructureSpawn(args.GameObject); });
 
-      MapsService.Events.ModeledStructureEvents.DidCreate.AddListener(
-          args => { HandleStructureSpawn(args.GameObject); });
+        MapsService.Events.ModeledStructureEvents.DidCreate.AddListener(
+            args => { HandleStructureSpawn(args.GameObject); });
 
     }
 
-    
-
-    
 
     // void Awake() {
     //     Labeller = GetComponent<Google.Maps.Examples.MapLabeller>();
