@@ -3596,8 +3596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LatLng:
-    _Lat: 40.00044
-    _Lng: -105.25184000000002
+    _Lat: 40.0182
+    _Lng: -105.27818000000002
   MapsService: {fileID: 347017281}
   MaxDistance: 1000
   IsLoading: 0

@@ -58,9 +58,9 @@ public class MerchantIndentifier : MonoBehaviour
         //businessesToLoad.Clear();
 
         //Here we would populate the business locations in address or LatLong
-        //Here i will add dummy values based off of the coordinates 40.00044, -105.25184
-        //in this case its a mcdonalds up the street
-        Google.Maps.Coord.LatLng fakeBusinessLoc = new Google.Maps.Coord.LatLng(39.999423, -105.255135);
+        //Here i will add dummy values based off of the coordinates 40.0188, -105.27818
+        //in this case its a small local toy store (turn 180 from starting position) really close
+        Google.Maps.Coord.LatLng fakeBusinessLoc = new Google.Maps.Coord.LatLng(40.0182, -105.2769);
         AddBusiness("Micky Ds", "Free Fries", fakeBusinessLoc);
         
 
