@@ -71,6 +71,7 @@
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\SearchByIdDialog.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\offer_text.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\popup.cs" />
+    <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\rating_text.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Updaters\BuildingLabelsCreator.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Updaters\DynamicMapsUpdater.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Updaters\MapFeaturesController.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Updaters\SearchByPlaceIdUpdater.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Utils\ListenToDestroy.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Utils\MapsGamingExamplesUtils.cs" />
+    <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\google places API\GoogleAPIClient.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\samplecode-CS-f3e8d0\vdp-c-sharp\vdp-c-sharp\Properties\AssemblyInfo.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\samplecode-CS-f3e8d0\vdp-c-sharp\vdp-c-sharp\VDPApiTest\helpers\VisaAPIClient.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\SharedAssets\Scripts\ApiKeyChecker.cs" />

@@ -19,7 +19,6 @@ public class offer_text : MonoBehaviour
 
     // Finds the offer information and updates the text
     public void UpdateOffer(int startIndex) {
-        Debug.Log("Offer updated!");
 
         // Create client and get components
         VisaAPIClient visaAPIClient = new VisaAPIClient();
@@ -36,7 +35,6 @@ public class offer_text : MonoBehaviour
 
         // Decode JSON returned
         var responseJSON = JSON.Parse(response);
-        Debug.Log("Parsed JSON: " + responseJSON.ToString());
         string firstProgram = responseJSON["Offers"][1]["programName"].Value;
         string firstOffer = responseJSON["Offers"][1]["offerTitle"].Value;
         string firstFrom = responseJSON["Offers"][1]["validityFromDate"].Value;
@@ -45,9 +43,6 @@ public class offer_text : MonoBehaviour
         // Change text
         string desiredText = firstProgram + "\n" + firstOffer + "\n" + firstFrom + " to " + firstTo;
         text.text = desiredText;
-
-        Debug.Log(desiredText);
-        Debug.Log(text.text);
 
         // Close response
         Debug.Log(status);

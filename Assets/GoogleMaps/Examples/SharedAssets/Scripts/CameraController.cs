@@ -20,7 +20,7 @@ namespace Google.Maps.Examples.Shared {
     public class MoveEvent : UnityEvent<Vector3> {}
 
     [Tooltip("Movement speed when pressing movement keys (WASD for panning, QE for up/down).")]
-    public float MovementSpeed = 1600f;
+    public float MovementSpeed = 3000f;
 
     [Tooltip("Rotation speed when pressing arrow keys.")]
     public float RotationSpeed = 200f;

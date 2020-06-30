@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using UnityEngine.Networking;
 
 namespace Vdp
 {
@@ -63,13 +64,15 @@ namespace Vdp
             string statusCode = "";
             LogRequest(requestURL, requestBodyString);
 
-            // Create the request object 
+            // Create request
+            //UnityWebRequest request = UnityWebRequest.Get(requestURL);
             HttpWebRequest request = WebRequest.Create(requestURL) as HttpWebRequest;
-            request.Method = method;
+
             if (method.Equals("POST") || method.Equals("PUT"))
             {
                 request.ContentType = "application/json";
                 request.Accept = "application/json";
+
                 // Load the body for the post request
                 var requestStringBytes = Encoding.UTF8.GetBytes(requestBodyString);
                 request.GetRequestStream().Write(requestStringBytes, 0, requestStringBytes.Length);
@@ -80,14 +83,19 @@ namespace Vdp
                 foreach (KeyValuePair<string, string> header in headers)
                 {
                     request.Headers[header.Key] = header.Value;
+                    //request.SetRequestHeader(header.Key, header.Value);
                 }
             }
-            
+
             // Add headers
             request.Headers["Authorization"] = GetBasicAuthHeader(userId, password);
             request.Headers["ex-correlation-id"] = GetCorrelationId();
+            //request.SetRequestHeader("Authorization", GetBasicAuthHeader(userId, password));
+            //request.SetRequestHeader("ex-correlation-id", GetCorrelationId());
+
             // Add certificate
             var certificate = new X509Certificate2(certificatePath, certificatePassword);
+            //request.certificateHandler = new CertificateHandler(certificate);
             request.ClientCertificates.Add(certificate);
 
             try
@@ -96,7 +104,8 @@ namespace Vdp
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
                     statusCode = response.StatusCode.ToString();
-                    using (var sr = new StreamReader(response.GetResponseStream(), ASCIIEncoding.ASCII)) {
+                    using (var sr = new StreamReader(response.GetResponseStream(), ASCIIEncoding.ASCII))
+                    {
                         string responseBody = sr.ReadToEnd();
                         UnityEngine.Debug.Log("Response body: " + responseBody);
                         return new Tuple<string, string>(statusCode, responseBody);

@@ -11,6 +11,7 @@ public class popup : MonoBehaviour
     public string longitude;
 
     public offer_text ofText;
+    public rating_text rText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,15 +25,16 @@ public class popup : MonoBehaviour
     }
 
     // Update underlying text
-    public void UpdateText(int offerStartIndex)
+    public void UpdateText(int offerStartIndex, string merchantName, string latValue, string lonValue)
     {
         ofText.UpdateOffer(offerStartIndex);
+        rText.UpdateRating(merchantName, latValue, lonValue);
     }
 
     // Show gameobject
-    public void Show(int offerStartIndex) {
+    public void Show(int offerStartIndex, string merchantName, string latValue, string lonValue) {
         gameObject.SetActive(true);
-        UpdateText(offerStartIndex);
+        UpdateText(offerStartIndex, merchantName, latValue, lonValue);
     }
 
     // Hide gameobject

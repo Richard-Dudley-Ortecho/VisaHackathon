@@ -55,7 +55,6 @@ public class MerchantIndentifier : MonoBehaviour
 
     private void OnClickFunction()
     {
-        Debug.Log("Merchant locator button pressed");
         businessesToLoad.Clear();
         //Here we would populate the business locations in address or LatLong
         //Here i will add dummy values based off of the coordinates 40.00044, -105.25184
