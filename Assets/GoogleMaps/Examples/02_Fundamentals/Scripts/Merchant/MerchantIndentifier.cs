@@ -28,8 +28,6 @@ public class MerchantIndentifier : MonoBehaviour
     //    MapsService = GetComponent<Google.Maps.MapsService>();
     // }
 
-    public List<GameObject> testB = new List<GameObject>();
-
     private Vector3 GetBuildingPosition(int index) {
       Google.Maps.Coord.LatLng latLng = businessesToLoad[index];
       return MapsService.Coords.FromLatLngToVector3(latLng);
@@ -45,7 +43,7 @@ public class MerchantIndentifier : MonoBehaviour
       foreach (Collider potentialBuilding in mercBuilding)
       {
         GameObject building = potentialBuilding.gameObject;
-        testB.Add(building);
+        //testB.Add(building);
         if (IsStructure(building)) {
           //testB = building;
           SetMercMarker(building);
@@ -55,18 +53,28 @@ public class MerchantIndentifier : MonoBehaviour
 
     private void OnClickFunction()
     {
-        businessesToLoad.Clear();
+        Debug.Log("Merchant locator button pressed");
+
+        //businessesToLoad.Clear();
+
         //Here we would populate the business locations in address or LatLong
         //Here i will add dummy values based off of the coordinates 40.00044, -105.25184
         //in this case its a mcdonalds up the street
-        Google.Maps.Coord.LatLng fakeBusiness = new Google.Maps.Coord.LatLng(39.999423, -105.255135);
-        businessesToLoad.Add(fakeBusiness);
+        Google.Maps.Coord.LatLng fakeBusinessLoc = new Google.Maps.Coord.LatLng(39.999423, -105.255135);
+        AddBusiness("Micky Ds", "Free Fries", fakeBusinessLoc);
         
 
         //Now we set all the buildings to be marked accordingly
         for (int i = 0; i < businessesToLoad.Count; i++) {
           MarkStructures(i);
         }
+    }
+
+    public void AddBusiness(string name, string deals, Google.Maps.Coord.LatLng location) 
+    {
+      if( !businessesToLoad.Contains(location) ) {
+        businessesToLoad.Add(location);
+      }
     }
 
     private void SetMercMarker(GameObject gameObject) {
