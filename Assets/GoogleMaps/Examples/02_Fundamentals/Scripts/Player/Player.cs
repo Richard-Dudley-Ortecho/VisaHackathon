@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Text points;
     public Text latValue;
     public Text lonValue;
+    public ProgressBar pb;
 
     private int score;
     private List<string> visitedMerchants;
@@ -32,8 +33,9 @@ public class Player : MonoBehaviour
         if (collision.collider.tag == "marked merchant") {
             string id = collision.collider.name;
             if (!visitedMerchants.Contains(id)) {
-                score += 1;
+                score += 10;
                 points.text = "Points: " + score;
+                pb.BarValue = score;
                 visitedMerchants.Add(id);
             }
             string merchantString = collision.collider.name;
