@@ -58,8 +58,8 @@ public class MerchantIndentifier : MonoBehaviour
         //Here i will add dummy values based off of the coordinates 40.0188, -105.27818
         //in this case its a small local toy store (turn 180 from starting position) really close
         Google.Maps.Coord.LatLng fakeBusinessLoc = new Google.Maps.Coord.LatLng(40.0182, -105.2769);
-        AddBusiness("McDonalds", "Free Fries", fakeBusinessLoc);
-        
+        AddBusiness("Into the Wind", "Free Fries", fakeBusinessLoc);
+        AddBusiness("Sforno Trattoria Romana", "None", new Google.Maps.Coord.LatLng(40.017992, -105.278267));
 
         //Now we set all the buildings to be marked accordingly
         for (int i = 0; i < businessesToLoad.Count; i++) {

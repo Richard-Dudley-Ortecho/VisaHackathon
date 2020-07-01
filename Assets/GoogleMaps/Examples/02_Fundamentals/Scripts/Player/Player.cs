@@ -11,13 +11,13 @@ public class Player : MonoBehaviour
     public Text lonValue;
 
     private int score;
-    private List<int> visitedMerchants;
+    private List<string> visitedMerchants;
 
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
-        visitedMerchants = new List<int>();
+        visitedMerchants = new List<string>();
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "marked merchant") {
-            int id = collision.collider.GetInstanceID();
+            string id = collision.collider.name;
             if (!visitedMerchants.Contains(id)) {
                 score += 1;
                 points.text = "Points: " + score;
