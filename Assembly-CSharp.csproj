@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\BaseMapLoader.cs" />
+    <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Merchant\MerchantForm.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Merchant\MerchantIndentifier.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\Player\Player.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\Labeller.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\MapsServiceView.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\SearchByIdDialog.cs" />
+    <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\name_text.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\offer_text.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\popup.cs" />
     <Compile Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\UI\rating_text.cs" />

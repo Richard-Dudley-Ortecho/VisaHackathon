@@ -22,46 +22,43 @@ public class MerchantIndentifier : MonoBehaviour
 
     //private HashSet<GameObject> UncheckedStructures = new HashSet<GameObject>();
 
-    public List<Google.Maps.Coord.LatLng> businessesToLoad = new List<Google.Maps.Coord.LatLng>();
+    public List<Merchant> businessesToLoad = new List<Merchant>();
     
     // private void Awake() {
     //    MapsService = GetComponent<Google.Maps.MapsService>();
     // }
 
     private Vector3 GetBuildingPosition(int index) {
-      Google.Maps.Coord.LatLng latLng = businessesToLoad[index];
+      Google.Maps.Coord.LatLng latLng = businessesToLoad[index].merchantLocation;
       return MapsService.Coords.FromLatLngToVector3(latLng);
     }
 
 
     private void MarkStructures(int index) {
-      Vector3 center = GetBuildingPosition(index);
+        Vector3 center = GetBuildingPosition(index);
+        string name = businessesToLoad[index].merchantName;
 
-      //Make a collider with the buildings
-      Collider[] mercBuilding = Physics.OverlapSphere(center, 20.0f);
+        //Make a collider with the buildings
+        Collider[] mercBuilding = Physics.OverlapSphere(center, 20.0f);
       
-      foreach (Collider potentialBuilding in mercBuilding)
-      {
-        GameObject building = potentialBuilding.gameObject;
-        //testB.Add(building);
-        if (IsStructure(building)) {
-          //testB = building;
-          SetMercMarker(building);
+        foreach (Collider potentialBuilding in mercBuilding)
+        {
+            GameObject building = potentialBuilding.gameObject;
+            if (IsStructure(building)) {
+                SetMercMarker(building, name);
+            }
         }
-      }
     }
 
     private void OnClickFunction()
     {
-        Debug.Log("Merchant locator button pressed");
-
         //businessesToLoad.Clear();
 
         //Here we would populate the business locations in address or LatLong
         //Here i will add dummy values based off of the coordinates 40.0188, -105.27818
         //in this case its a small local toy store (turn 180 from starting position) really close
         Google.Maps.Coord.LatLng fakeBusinessLoc = new Google.Maps.Coord.LatLng(40.0182, -105.2769);
-        AddBusiness("Micky Ds", "Free Fries", fakeBusinessLoc);
+        AddBusiness("McDonalds", "Free Fries", fakeBusinessLoc);
         
 
         //Now we set all the buildings to be marked accordingly
@@ -72,16 +69,16 @@ public class MerchantIndentifier : MonoBehaviour
 
     public void AddBusiness(string name, string deals, Google.Maps.Coord.LatLng location) 
     {
-      if( !businessesToLoad.Contains(location) ) {
-        businessesToLoad.Add(location);
-      }
+        Merchant m = new Merchant(name, location);
+        businessesToLoad.Add(m);
     }
 
-    private void SetMercMarker(GameObject gameObject) {
-      //Change the game object so that it is now marked, in this case it will be ?blinking? blue
-      Renderer renderer = gameObject.GetComponent<Renderer>();
-      renderer.material.color = Color.blue;
-      gameObject.tag = "marked merchant";
+    private void SetMercMarker(GameObject gameObject, string merchantName) {
+        //Change the game object so that it is now marked, in this case it will be ?blinking? blue
+        Renderer renderer = gameObject.GetComponent<Renderer>();
+        renderer.material.color = Color.blue;
+        gameObject.tag = "marked merchant";
+        gameObject.name = merchantName;
     }
 
     private bool IsStructure(GameObject gameObject) {
@@ -123,49 +120,14 @@ public class MerchantIndentifier : MonoBehaviour
 
     }
 
+}
 
-    // void Awake() {
-    //     Labeller = GetComponent<Google.Maps.Examples.MapLabeller>();
-    //     //I dont know if we need this labller tbh
-    // }
+public class Merchant {
+    public string merchantName;
+    public Google.Maps.Coord.LatLng merchantLocation;
 
-    // void OnEnable() {
-    //     Labeller.BaseMapLoader.MapsService.Events.ExtrudedStructureEvents.DidCreate.AddListener(
-    //       OnExtrudedStructureCreated);
-
-    //     Labeller.BaseMapLoader.MapsService.Events.ModeledStructureEvents.DidCreate.AddListener(
-    //       OnModeledStructureCreated);
-    // }
-
-    // void OnDisable() {
-    //   Labeller.BaseMapLoader.MapsService.Events.ExtrudedStructureEvents.DidCreate.RemoveListener(
-    //       OnExtrudedStructureCreated);
-          
-    //   Labeller.BaseMapLoader.MapsService.Events.ModeledStructureEvents.DidCreate.RemoveListener(
-    //       OnModeledStructureCreated);
-    // }
-
-    // void OnExtrudedStructureCreated(DidCreateExtrudedStructureArgs args) {
-    //   CreateLabel(args.GameObject, args.MapFeature.Metadata.PlaceId, args.MapFeature.Metadata.Name);
-    // }
-
-    // void OnModeledStructureCreated(DidCreateModeledStructureArgs args) {
-    //   CreateLabel(args.GameObject, args.MapFeature.Metadata.PlaceId, args.MapFeature.Metadata.Name);
-    // }
-
-    // void CreateLabel(GameObject buildingGameObject, string placeId, string displayName) {
-    //   if (!Labeller.enabled)
-    //     return;
-
-    //   // Ignore uninteresting names.
-    //   if (displayName.Equals("ExtrudedStructure") || displayName.Equals("ModeledStructure")) {
-    //     return;
-    //   }
-
-    //   Label label = Labeller.NameObject(buildingGameObject, placeId, displayName);
-    //   // if (label != null) {
-    //   //   MapsGamingExamplesUtils.PlaceUIMarker(buildingGameObject, label.transform);
-    //   // }
-    // }
-
+    public Merchant(string n, Google.Maps.Coord.LatLng l) {
+        this.merchantLocation = l;
+        this.merchantName = n;
+    }
 }

@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{DD7A9FB6-BA72-2582-49E3-F0E2DCEEDF11}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleMaps/Examples/SharedAssets/Scripts/CameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleMaps/Examples/SharedAssets/Scripts/InstructionsHandler.cs">
     <Files>
       <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/samplecode-CS-f3e8d0/vdp-c-sharp/vdp-c-sharp/VDPApiTest/helpers/VisaAPIClient.cs" Line="123" Column="18" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/offer_text.cs" Line="47" Column="26" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Player/Player.cs" Line="26" Column="9" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/popup.cs" Line="26" Column="1" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Player/Player.cs" Line="38" Column="14" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/popup.cs" Line="34" Column="6" />
       <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/google places API/GoogleAPIClient.cs" Line="1" Column="1" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/rating_text.cs" Line="83" Column="6" />
-      <File FileName="Assets/GoogleMaps/Plugins/SimpleJSON.cs" Line="728" Column="29" />
-      <File FileName="Assets/GoogleMaps/Examples/SharedAssets/Scripts/CameraController.cs" Line="23" Column="38" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Merchant/MerchantIndentifier.cs" Line="120" Column="1" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Merchant/MerchantForm.cs" Line="5" Column="19" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/rating_text.cs" Line="1" Column="1" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/offer_text.cs" Line="25" Column="53" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/name_text.cs" Line="17" Column="23" />
+      <File FileName="Assets/GoogleMaps/Examples/SharedAssets/Scripts/InstructionsHandler.cs" Line="48" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,7 +39,7 @@
                   </Node>
                   <Node name="SharedAssets" expanded="True">
                     <Node name="Scripts" expanded="True">
-                      <Node name="CameraController.cs" selected="True" />
+                      <Node name="InstructionsHandler.cs" selected="True" />
                     </Node>
                   </Node>
                 </Node>

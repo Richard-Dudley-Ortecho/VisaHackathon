@@ -12,6 +12,7 @@ public class popup : MonoBehaviour
 
     public offer_text ofText;
     public rating_text rText;
+    public name_text nText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class popup : MonoBehaviour
     {
         ofText.UpdateOffer(offerStartIndex);
         rText.UpdateRating(merchantName, latValue, lonValue);
+        nText.UpdateName(merchantName);
     }
 
     // Show gameobject

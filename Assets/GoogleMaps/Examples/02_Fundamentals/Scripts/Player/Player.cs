@@ -37,9 +37,7 @@ public class Player : MonoBehaviour
                 visitedMerchants.Add(id);
             }
             string merchantString = collision.collider.name;
-            int endIndex = merchantString.LastIndexOf("(");
-            string merchantName = merchantString.Substring(0, endIndex);
-            popup.Show((int)(Random.value * 10), merchantName, latValue.text, lonValue.text);
+            popup.Show((int)(Random.value * 10), merchantString, latValue.text, lonValue.text);
         }
     }
 
