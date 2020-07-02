@@ -109,6 +109,12 @@
     <Compile Include="Assets\GoogleMaps\Examples\SharedAssets\Scripts\ZoomPinch.cs" />
     <Compile Include="Assets\GoogleMaps\Plugins\SimpleJSON.cs" />
     <Compile Include="Assets\GoogleMaps\Scripts\DeviceCountryProvider.cs" />
+    <Compile Include="Assets\ProgressBar\Scene\Demo.cs" />
+    <Compile Include="Assets\ProgressBar\Script\ProgressBar.cs" />
+    <Compile Include="Assets\ProgressBar\Script\ProgressBarCircle.cs" />
+    <Compile Include="Assets\miniMap-TurzoStudio\Scripts\FollowCharacter.cs" />
+    <Compile Include="Assets\miniMap-TurzoStudio\Scripts\GUIManager.cs" />
+    <Compile Include="Assets\miniMap-TurzoStudio\Scripts\miniCameraScript.cs" />
     <None Include="Assets\GoogleMaps\Examples\SharedAssets\Shaders\ScrollingTextureShader.shader" />
     <None Include="Assets\GoogleMaps\Resources\MuskStandard.shader" />
     <None Include="Assets\GoogleMaps\Resources\GoogleMapsShaderLib.cginc" />
@@ -116,8 +122,10 @@
     <None Include="Assets\GoogleMaps\Resources\BaseMapTextured.shader" />
     <None Include="Assets\GoogleMaps\Resources\BaseMapTexturedUnlit.shader" />
     <None Include="Assets\GoogleMaps\Plugins\Google.Maps.xml" />
+    <None Include="Assets\miniMap-TurzoStudio\Shader,Texture,Mask\MaskShader.shader" />
     <None Include="Assets\GoogleMaps\Examples\SharedAssets\Shaders\ColorWithSpecular.shader" />
     <None Include="Assets\GoogleMaps\Examples\SharedAssets\Shaders\UIOverlay.shader" />
+    <None Include="Assets\miniMap-TurzoStudio\Read Me First.txt" />
     <None Include="Assets\GoogleMaps\Examples\SharedAssets\Shaders\ColorWithSpecularLod.shader" />
     <None Include="Assets\GoogleMaps\Resources\BaseMapColorUnlit.shader" />
     <None Include="Assets\GoogleMaps\Examples\02_Fundamentals\Scripts\samplecode-CS-f3e8d0\vdp-c-sharp\LICENSE.txt" />
