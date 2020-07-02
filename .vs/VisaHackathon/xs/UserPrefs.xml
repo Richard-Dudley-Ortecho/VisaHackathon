@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{DD7A9FB6-BA72-2582-49E3-F0E2DCEEDF11}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/MapsServiceView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/miniMap-TurzoStudio/Scripts/miniCameraScript.cs">
     <Files>
       <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Merchant/MerchantForm.cs" Line="1" Column="1" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Merchant/MerchantIndentifier.cs" Line="67" Column="10" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Player/Player.cs" Line="36" Column="29" />
-      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/samplecode-CS-f3e8d0/vdp-c-sharp/vdp-c-sharp/VDPApiTest/helpers/VisaAPIClient.cs" Line="56" Column="1" />
-      <File FileName="Assets/GoogleMaps/Examples/SharedAssets/Scripts/PanelAnimationController.cs" Line="82" Column="27" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Merchant/MerchantIndentifier.cs" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/Player/Player.cs" />
+      <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/samplecode-CS-f3e8d0/vdp-c-sharp/vdp-c-sharp/VDPApiTest/helpers/VisaAPIClient.cs" />
+      <File FileName="Assets/GoogleMaps/Examples/SharedAssets/Scripts/PanelAnimationController.cs" />
       <File FileName="Assets/GoogleMaps/Examples/02_Fundamentals/Scripts/UI/MapsServiceView.cs" Line="1" Column="1" />
+      <File FileName="Assets/GoogleMaps/Examples/SharedAssets/Scripts/InstructionsHandler.cs" Line="45" Column="57" />
+      <File FileName="Assets/miniMap-TurzoStudio/Scripts/miniCameraScript.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,9 +32,7 @@
                           </Node>
                         </Node>
                       </Node>
-                      <Node name="UI" expanded="True">
-                        <Node name="MapsServiceView.cs" selected="True" />
-                      </Node>
+                      <Node name="UI" expanded="True" />
                     </Node>
                   </Node>
                   <Node name="SharedAssets" expanded="True">
@@ -40,6 +40,11 @@
                   </Node>
                 </Node>
                 <Node name="Plugins" expanded="True" />
+              </Node>
+              <Node name="miniMap-TurzoStudio" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="miniCameraScript.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
